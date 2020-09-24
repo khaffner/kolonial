@@ -29,6 +29,10 @@ Foreach($category in $ShoppingList) {
 
     # Getting all products from given category
     $products = (Invoke-RestMethod -Method Get -Uri "$baseurl/productcategories/$($category.CategoryID)" -Headers $headers).products
+
+    # Keep only available products
+    $products = $products | Where-Object {$PSItem.availability.is_available -EQ $true}
+    
     if($category.FilterInclude) {
         # Keep only items with given string in name
         $products = $products | Where-Object full_name -Like "*$($category.FilterInclude)*" 
