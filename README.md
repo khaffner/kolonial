@@ -22,4 +22,4 @@ Afterwards, you may want to look through the cart to make sure everything is ok,
   - "FilterInclude" is a string that the product name must contain. Wildcards (*) are allowed. Optional.
   - "FilterExclude" is a string that the product name must NOT contain. Wildcards (*) are allowed. Optional.
   - "Quantity" is how many of the items you want. 1 is a good default value.
-- The run with ```docker-compose up --build```
+- Then run with ```docker-compose up --build```
